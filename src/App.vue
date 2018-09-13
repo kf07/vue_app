@@ -19,6 +19,17 @@
       components: {
           Home: Home,
           Calendar: Calendar
+      },
+      created: function() {
+          firebase.auth().onAuthStateChanged(user => {
+              console.log(user);
+              if (user) {
+                  this.isLogin = true;
+                  console.log(this.isLogin)
+              } else {
+                  this.isLogin = false;
+              }
+          })
       }
   }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Home v-if="!isLogin"></Home>
-    <Calendar v-if="isLogin"></Calendar>
+    <Calendar v-if="isLogin" :user="userData"></Calendar>
   </div>
 </template>
 
@@ -13,7 +13,8 @@
       name: "app",
       data() {
           return {
-              isLogin: false
+              isLogin: false,
+              userData: null
           }
       },
       components: {
@@ -25,9 +26,11 @@
               console.log(user);
               if (user) {
                   this.isLogin = true;
+                  this.userData = user;
                   console.log(this.isLogin)
               } else {
                   this.isLogin = false;
+                  this.userData = null;
               }
           })
       }

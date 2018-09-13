@@ -19,6 +19,19 @@
                     .auth()
                         .signInWithRedirect(new firebase.auth.GoogleAuthProvider());
             }
+        },
+        created: function() {
+            firebase.auth().onAuthStateChanged(user => {
+                console.log(user);
+                if (user) {
+                    console.log('s')
+                    this.isLogin = true;
+                    console.log(this.isLogin)
+                } else {
+                    console.log('g')
+                    this.isLogin = false;
+                }
+            })
         }
     }
 </script>

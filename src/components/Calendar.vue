@@ -2,7 +2,7 @@
     <div class="calendar">
         <h1>カレンダー</h1>
         <span>{{ user.displayName }}</span>
-        <button @click="logout">ログアウト</button>
+        <vs-button @click="logout" vs-type="border" vs-color="primary">ログアウト</vs-button>
     </div>
 </template>
 

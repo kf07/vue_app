@@ -1,4 +1,4 @@
-# vue_money
+# vue_app
 
 > A Vue.js project
 
